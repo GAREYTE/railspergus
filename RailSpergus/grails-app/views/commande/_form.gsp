@@ -42,20 +42,29 @@
 	<g:datePicker name="datePreparation" precision="day"  value="${commandeInstance?.datePreparation}"  />
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: commandeInstance, field: 'details', 'error')} ">
+	<label for="details">
+		<g:message code="commande.details.label" default="Details" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${commandeInstance?.details?}" var="d">
+    <li><g:link controller="commandeDetail" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="commandeDetail" action="create" params="['commande.id': commandeInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'commandeDetail.label', default: 'CommandeDetail')])}</g:link>
+</li>
+</ul>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: commandeInstance, field: 'livrePar', 'error')} required">
 	<label for="livrePar">
 		<g:message code="commande.livrePar.label" default="Livre Par" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="livrePar" name="livrePar.id" from="${railspergus.Salarie.list()}" optionKey="id" required="" value="${commandeInstance?.livrePar?.id}" class="many-to-one"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: commandeInstance, field: 'livreePar', 'error')} required">
-	<label for="livreePar">
-		<g:message code="commande.livreePar.label" default="Livree Par" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="livreePar" name="livreePar.id" from="${railspergus.Salarie.list()}" optionKey="id" required="" value="${commandeInstance?.livreePar?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: commandeInstance, field: 'numero', 'error')} required">

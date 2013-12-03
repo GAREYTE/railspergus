@@ -68,20 +68,22 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${commandeInstance?.details}">
+				<li class="fieldcontain">
+					<span id="details-label" class="property-label"><g:message code="commande.details.label" default="Details" /></span>
+					
+						<g:each in="${commandeInstance.details}" var="d">
+						<span class="property-value" aria-labelledby="details-label"><g:link controller="commandeDetail" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${commandeInstance?.livrePar}">
 				<li class="fieldcontain">
 					<span id="livrePar-label" class="property-label"><g:message code="commande.livrePar.label" default="Livre Par" /></span>
 					
 						<span class="property-value" aria-labelledby="livrePar-label"><g:link controller="salarie" action="show" id="${commandeInstance?.livrePar?.id}">${commandeInstance?.livrePar?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${commandeInstance?.livreePar}">
-				<li class="fieldcontain">
-					<span id="livreePar-label" class="property-label"><g:message code="commande.livreePar.label" default="Livree Par" /></span>
-					
-						<span class="property-value" aria-labelledby="livreePar-label"><g:link controller="salarie" action="show" id="${commandeInstance?.livreePar?.id}">${commandeInstance?.livreePar?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

@@ -27,6 +27,5 @@ package railspergus;
 	
 	 String remarque
 	
-	 static belongsTo = [client:Client ,prisePar:Salarie, preparePar:Salarie, livreePar:Salarie]
- 	static hasMany = [details:CommandeDetail]
+	 static hasMany = [details:CommandeDetail]
 }

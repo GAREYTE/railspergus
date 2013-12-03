@@ -2,19 +2,23 @@ package railspergus
 
 
 class Client {
+	static scaffold = true
 	
-	Integer numero;
+	Integer numero
 	
-	String nom;
+	String nom
 	
-	String prenom;
-	Adresse adresse;
+	String prenom
+	Adresse adresse
 
-	String telephone;
-	String email;
+	String telephone
+	String email
+	
+	String toString() {
+		"${nom} ${prenom}"
+	}
 	static constraints = {numero nullable:false }
 	
-	static hasOne = {adresse:Adresse}
 	
 	//private Collection<Commande> commande;
 	

@@ -15,7 +15,6 @@ class Produit {
 	Categorie categorie;
 	
 	BigDecimal prixUnitaire;
-    static hasOne = {categorie:Categorie}
 	static constraints = {
     	categorie nullable:false 
 		description nullable:false 

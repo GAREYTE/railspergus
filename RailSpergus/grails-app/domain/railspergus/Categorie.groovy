@@ -2,7 +2,12 @@ package railspergus
 
 class Categorie {
 	String name
-    static constraints = {
+	static  belongsTo  = {produit:Produit}
+	
+	String toString() {
+		"${name} "
+	}
+	static constraints = {
     	name nullable:false 
 	}
 }

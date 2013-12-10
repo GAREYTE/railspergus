@@ -1,4 +1,4 @@
-import railspergus.*;
+import railspergus.* 
 
 class BootStrap {
 
@@ -22,14 +22,18 @@ class BootStrap {
 		prod5.save()
 		def prod6 = new Produit(prixUnitaire: 2,  categorie: cat2,numero: 6,description: "10/16"   )
 		prod6.save()
-		def sal1 = new Salarie(numero: 1,nom: "Fabrice"  ).save()
-		def sal2 = new Salarie(numero: 2,nom: "Nicole"  ).save()
+		def sal1 = new Salarie(numero: 1,nom: "Fabrice" ,visible: true  )
+		sal1.save(true)
+		def sal2 = new Salarie(numero: 2,nom: "Nicole" ,visible: false  )
+		sal2.save(true)
 		
 	
 		def ad = new Adresse(codePostal: 97422,rue: "bec alouette",ville: "La saline"   ).save(true)
 		
-//		def client1 = new Client(prenom: "jerome", adresse: ad, nom: "GAREYTE",numero: 1  ).save(true);
-//		def client2 = new Client(prenom:" aurelie" ,adresse: ad, nom: "NOEL",numero: 2  ).save(true);
+		def client1 = new Client(prenom: "jerome", adresse: ad, nom: "GAREYTE",numero: 1  )
+		client1.save(true)
+		def client2 = new Client(prenom:" aurelie" ,adresse: ad, nom: "NOEL",numero: 2  )
+		client2.save(true)
 		
 		
     }

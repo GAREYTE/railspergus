@@ -23,9 +23,9 @@ package railspergus;
 	
 	 Client client
 	
-	 Collection details
-	
 	 String remarque
+	 
+	 Set details
 	
 	 static hasMany = [details:CommandeDetail]
 }

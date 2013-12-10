@@ -1,6 +1,6 @@
 package railspergus
 
 class AdresseController {
-	static scaffold =true
+	static scaffold =Adresse
  
 }

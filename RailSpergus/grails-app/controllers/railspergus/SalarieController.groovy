@@ -2,5 +2,5 @@ package railspergus
 
 class SalarieController {
 
-  	static scaffold =true
+  	static scaffold =Salarie
 }
